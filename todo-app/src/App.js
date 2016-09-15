@@ -12,6 +12,9 @@ class App extends Component {
                 {text: "kaffee"}
             ]
         };
+
+        //function binding => schoener
+        this.handleAddToDo = this.handleClick.bind(this);
     }
 
     handleClick(todo) {
@@ -47,7 +50,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>todo</h1>
-                <AddTodo onAddTodo={this.handleClick.bind(this)}/>
+                <AddTodo onAddTodo={this.handleAddToDo}/>
 
                 <TodoList todos={this.state.todos} onTodoDone={this.handleTodoDone.bind(this)}/>
 
